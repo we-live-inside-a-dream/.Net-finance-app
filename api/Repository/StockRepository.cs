@@ -6,7 +6,7 @@ using api.Data;
 using api.Dtos.Stock;
 using api.Interfaces;
 using api.Models;
-using Microsoft.EntityFrameworkCore; 
+using Microsoft.EntityFrameworkCore;
 
 namespace api.Repository
 {
@@ -18,14 +18,16 @@ namespace api.Repository
             _context = context;
         }
 
-        public Task<Stock> CreateAsync(Stock stockModel)
+        public async Task<Stock> CreateAsync(Stock stockModel)
         {
-            throw new NotImplementedException();
+            await _context.Stocks.AddAsync(stockModel);
+            await _context.SaveChangesAsync();
+            return stockModel;
         }
 
         public async Task<Stock?> DeleteAsync(int id)
         {
-             var stockModel = await _context.Stocks.FirstOrDefaultAsync(x => x.Id == id);
+            var stockModel = await _context.Stocks.FirstOrDefaultAsync(x => x.Id == id);
 
             if (stockModel == null)
             {
@@ -39,9 +41,9 @@ namespace api.Repository
             return stockModel;
         }
 
-        public  Task<List<Stock>> GetAllAsync()
+        public Task<List<Stock>> GetAllAsync()
         {
-            return  _context.Stocks.ToListAsync();
+            return _context.Stocks.ToListAsync();
         }
 
         public Task<Stock?> GetByIdAsync(int id)
