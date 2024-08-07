@@ -12,7 +12,7 @@ namespace api.Models
         public string Content { get; set; } = string.Empty;
         public DateTime CreatedOn { get; set; } = DateTime.Now;
         public int? StockId { get; set; }
-        //The property below is a Navigation property
+        //The property below is a Navigation property - it's the foreign key
         public Stock? Stock { get; set; }
     }
 }
