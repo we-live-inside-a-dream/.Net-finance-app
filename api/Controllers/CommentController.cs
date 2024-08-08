@@ -84,7 +84,7 @@ namespace api.Controllers
 
             if (commentModel == null)
             {
-                return NotFound();
+                return NotFound("comments does not exist");
             }
 
             return NoContent();
