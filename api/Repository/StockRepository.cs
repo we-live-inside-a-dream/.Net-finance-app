@@ -57,6 +57,16 @@ namespace api.Repository
                 stocks = stocks.Where(s => s.Symbol.Contains(query.Symbol));
             }
 
+            if (!string.IsNullOrWhiteSpace(query.SortBy))
+            {
+                Console.WriteLine($"SortBy: {query.SortBy}, isDescending: {query.isDescending}");
+                if (query.SortBy.Equals("Symbol", StringComparison.OrdinalIgnoreCase))
+                    Console.WriteLine($"Stocks after sorting: {string.Join(", ", stocks.Select(s => s.Symbol))}"); Console.WriteLine($"Stocks after sorting: {string.Join(", ", stocks.Select(s => s.Symbol))}");
+                {
+                    stocks = query.isDescending ? stocks.OrderByDescending(s => s.Symbol) : stocks.OrderBy(s => s.Symbol);
+                }
+            }
+
             return await stocks.ToListAsync();
         }
 
