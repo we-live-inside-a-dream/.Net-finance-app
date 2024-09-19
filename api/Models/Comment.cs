@@ -16,5 +16,7 @@ namespace api.Models
         public int? StockId { get; set; }
         //The property below is a Navigation property - it's the foreign key
         public Stock? Stock { get; set; }
+        public string AppUserId { get; set; }
+        public AppUser AppUser { get; set; }
     }
 }
