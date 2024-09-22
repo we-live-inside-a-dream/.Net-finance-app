@@ -14,7 +14,6 @@ function App() {
 
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
-    // console.log("e", e);
   };
 
   const onPortfolioCreate = (e: any) => {
@@ -23,7 +22,6 @@ function App() {
     if (exists) return;
     const updatedPortfolio = [...portfolioValues, e.target[0].value];
     setPortfolioValues(updatedPortfolio);
-    // console.log("onPortfolioCreate", e);
   };
 
   const onSearchSubmit = async (e: SyntheticEvent) => {
