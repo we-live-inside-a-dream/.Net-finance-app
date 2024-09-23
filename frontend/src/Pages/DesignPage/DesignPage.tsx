@@ -1,3 +1,4 @@
+import RatioList from "../../Components/RatioList/RatioList";
 import Table from "../../Components/Table/Table";
 import "./DesignPage.css";
 
@@ -11,6 +12,7 @@ const DesignPage = (props: Props) => {
         This is TradeShark's design page. This is where we will house various
         design aspects of the app
       </h2>
+      <RatioList />
       <Table />
     </>
   );
