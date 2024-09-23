@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import "./CompanyPage.css";
 import { useEffect, useState } from "react";
 import { CompanyProfile } from "../../company";
