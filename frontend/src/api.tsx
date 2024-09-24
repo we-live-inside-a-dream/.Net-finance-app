@@ -7,6 +7,7 @@ import {
   CompanyKeyMetrics,
   CompanyProfile,
   CompanySearch,
+  CompanyTenK,
 } from "./company";
 
 interface SearchResponse {
@@ -131,3 +132,20 @@ export const getCashFlowStatement = async (query: string) => {
 //     }
 //   }
 // };
+
+export const getTenK = async (query: string) => {
+  try {
+    const data = await axios.get<CompanyTenK[]>(
+      `https://financialmodelingprep.com/api/v3/sec_filings/${query}?type=10-k&page=0&apikey=${process.env.REACT_APP_API_KEY}`
+    );
+    return data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      console.log("error message from API: ", error.message);
+      return error.message;
+    } else {
+      console.log("unexpected error: ", error);
+      return "An unexpected error has occurred.";
+    }
+  }
+};
