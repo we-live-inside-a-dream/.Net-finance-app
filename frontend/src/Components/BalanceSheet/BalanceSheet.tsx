@@ -4,6 +4,7 @@ import "./BalanceSheet.css";
 import { useEffect, useState } from "react";
 import { getBalanceSheet } from "../../api";
 import RatioList from "../RatioList/RatioList";
+import Spinner from "../Spinner/Spinner";
 
 interface Props {}
 
@@ -82,7 +83,7 @@ const BalanceSheet = (props: Props) => {
           <RatioList config={config} data={balanceSheet} />
         </>
       ) : (
-        <h1>Company not found</h1>
+        <Spinner />
       )}
     </>
   );

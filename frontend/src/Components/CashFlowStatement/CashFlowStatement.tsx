@@ -4,6 +4,7 @@ import { CompanyCashFlow } from "../../company";
 import Table from "../Table/Table";
 import { useEffect, useState } from "react";
 import { getCashFlowStatement } from "../../api";
+import Spinner from "../Spinner/Spinner";
 
 interface Props {}
 
@@ -59,8 +60,7 @@ const CashFlowStatement = (props: Props) => {
   return cashFlowData ? (
     <Table configs={config} data={cashFlowData}></Table>
   ) : (
-    //   <Spinner />
-    <h1>No result</h1>
+    <Spinner />
   );
 };
 
