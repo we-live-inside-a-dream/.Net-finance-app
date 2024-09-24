@@ -31,6 +31,7 @@ const CompanyPage = (props: Props) => {
           <Sidebar />
           <CompanyDashboard ticker={ticker!}>
             <Tile title="Company Name" subTitle={company.companyName} />
+            <Tile title="Company Price" subTitle={company.price.toString()} />
           </CompanyDashboard>
         </div>
       ) : (
