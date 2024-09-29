@@ -23,7 +23,7 @@ const Navbar = (props: Props) => {
             Login
           </Link>
           <a
-            href=""
+            href="register"
             className="px-8 py-3 font-bold rounded text-white bg-lightGreen hover:opacity-70"
           >
             Signup
