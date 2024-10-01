@@ -1,10 +1,10 @@
 export type CommentPost = {
   title: string;
-  comment: string;
+  content: string;
 };
 
 export type CommentGet = {
   title: string;
-  comment: string;
-  symbol: string;
+  content: string;
+  createdBy: string;
 };
