@@ -110,7 +110,7 @@ app.UseCors(x => x
 .AllowAnyMethod()
 .AllowAnyHeader()
 .AllowCredentials()
-// .WithOrigins("https://localhost:5084")
+.WithOrigins("https://localhost:5084")
 .SetIsOriginAllowed(origin => true));
 app.UseAuthentication();
 app.UseAuthorization();
